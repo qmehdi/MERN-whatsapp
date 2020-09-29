@@ -9,5 +9,5 @@ const whatsappSchema = mongoose.Schema({
 });
 
 // Set up the MongoDB Collection with the Schema
-export default mongoose.model('messageContent', whatsappSchema)
+export default mongoose.model('messagecontents', whatsappSchema)
 
