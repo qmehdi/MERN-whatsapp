@@ -28,7 +28,7 @@ function App() {
     // Every time a new message comes in, this code runs
     const channel = pusher.subscribe("messages");
     channel.bind("inserted", (newMessage) => {
-      alert(JSON.stringify(newMessage));
+      // alert(JSON.stringify(newMessage));
       // Keep all current messages, but also add the new one
       setMessages([...messages, newMessage]);
     });
@@ -40,7 +40,7 @@ function App() {
     return () => {
       channel.unbind_all();
       channel.unsubscribe();
-    }
+    };
   }, [messages]);
 
   console.log(messages);
@@ -49,7 +49,7 @@ function App() {
     <div className="app">
       <div className="app__body">
         <Sidebar />
-        <Chat />
+        <Chat messages={messages} />
       </div>
     </div>
   );
